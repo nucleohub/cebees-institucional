@@ -200,13 +200,13 @@ export default async function CursoLivrePage({ params }: Props) {
                     <span className="font-semibold text-[var(--color-text)]">{data.cargaHoraria}</span>
                   </div>
                 )}
-                {data.preco !== undefined && (
+                {data.preco != null && (
                   <div className="bg-[var(--color-surface)] px-4 py-3 flex justify-between text-sm">
                     <span className="text-[var(--color-text-2)]">Investimento</span>
                     <span className="font-semibold text-[var(--color-text)]">
                       {data.preco === 0
                         ? "Gratuito"
-                        : `R$ ${data.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`}
+                        : `R$ ${(data.preco as number).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`}
                     </span>
                   </div>
                 )}
